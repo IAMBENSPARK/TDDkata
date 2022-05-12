@@ -1,0 +1,33 @@
+a = input()
+b = len(a)
+#print(b)
+if a.startswith("/"):
+    u = a.replace(";",",")
+    #print(u)
+    count = []
+    for j in u:
+        if j.isdigit():
+            count.append(int(j))
+    print(sum(count))
+else:
+    z = a.replace("\\n",",")
+    #print(z)
+    if b >2:
+        c = list(map(int,z.split(",")))
+        #print(c)
+        fact = False
+        kgf = 0
+        for j in c:
+            if str(j).startswith("-"):
+                #f = str(j)
+                print("negatives not allowed {}".format(j))
+                fact = True
+                break
+            else:
+                kgf += j
+        if fact == False:
+            print(kgf)
+        else:
+            pass
+    elif a == "":
+        print(0)
